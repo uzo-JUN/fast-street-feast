@@ -20,7 +20,7 @@ const MenuPage = () => {
     }
   }, []);
 
-  // Save cart to localStorage
+  // Save cart to localStorage  
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
