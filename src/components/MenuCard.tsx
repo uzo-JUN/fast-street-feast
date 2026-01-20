@@ -24,7 +24,12 @@ const MenuCard = ({ image, title, description, price, delay = 0 }: MenuCardProps
       <div className="p-5">
         <div className="flex items-start justify-between mb-2">
           <h3 className="text-foreground font-semibold text-lg">{title}</h3>
-          <span className="text-primary font-bold">{price}</span>
+          <span 
+            className="font-bold"
+            style={{ color: '#ef4444' }} // Changed from text-primary to red
+          >
+            {price}
+          </span>
         </div>
         <p className="text-muted-foreground text-sm line-clamp-2">{description}</p>
       </div>

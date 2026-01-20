@@ -31,7 +31,17 @@ const MenuSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-foreground">Our </span>
-            <span className="text-gradient">Popular</span>
+            <span 
+              className="text-gradient"
+              style={{
+                background: 'linear-gradient(to right, #ef4444, #dc2626)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              Popular
+            </span>
             <span className="text-foreground"> Picks</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">

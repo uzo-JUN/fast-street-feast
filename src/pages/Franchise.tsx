@@ -1,4 +1,4 @@
-// FranchisePage.tsx - WITHOUT Search & Bookmark icons, VISIBLE ON MOBILE
+// FranchisePage.tsx - WITHOUT Search & Bookmark icons, VISIBLE ON MOBILE, RED THEME
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
@@ -37,8 +37,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4 sm:gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xs sm:text-sm">M</span>
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#ef4444] rounded-full flex items-center justify-center">
+                {/* Changed "M" to white */}
+                <span className="text-white font-bold text-xs sm:text-sm">M</span>
               </div>
               <span className="text-foreground font-semibold text-base sm:text-lg">Mealsworth</span>
             </Link>
@@ -102,7 +103,7 @@ const FranchisePage = () => {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Low Investment",
       description: "Start from ₦1M with flexible financing",
-      color: "bg-gradient-to-br from-amber-500 to-orange-600"
+      color: "bg-gradient-to-br from-[#ef4444] to-[#dc2626]" // Changed amber/orange to red
     },
     {
       icon: <Users className="w-8 h-8" />,
@@ -169,19 +170,19 @@ const FranchisePage = () => {
           <div className="relative h-full flex items-center">
             <div className="container mx-auto px-6 md:px-8">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                  <Store className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium text-primary">FRANCHISE OPPORTUNITY</span>
+                <div className="inline-flex items-center gap-2 bg-[#ef4444]/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                  <Store className="w-5 h-5 text-[#ef4444]" />
+                  <span className="text-sm font-medium text-[#ef4444]">FRANCHISE OPPORTUNITY</span>
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                  Own a <span className="text-primary">Mealsworth</span>
+                  Own a <span className="text-[#ef4444]">Mealsworth</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 max-w-xl">
                   Join Nigeria's fastest growing street food franchise. 
                   Turn your entrepreneurial dreams into reality.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg rounded-full">
+                  <Button className="bg-[#ef4444] text-white hover:bg-[#ef4444]/90 px-8 py-6 text-lg rounded-full">
                     Apply Now <ChevronRight className="ml-2" />
                   </Button>
                   <Button variant="outline" className="px-8 py-6 text-lg rounded-full border-2">
@@ -198,19 +199,19 @@ const FranchisePage = () => {
           <div className="container mx-auto px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">50+</div>
+                <div className="text-4xl font-bold text-[#ef4444] mb-2">50+</div>
                 <div className="text-sm text-muted-foreground">Franchise Locations</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">90%</div>
+                <div className="text-4xl font-bold text-[#ef4444] mb-2">90%</div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">₦1M</div>
+                <div className="text-4xl font-bold text-[#ef4444] mb-2">₦1M</div>
                 <div className="text-sm text-muted-foreground">Starting Investment</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+                <div className="text-4xl font-bold text-[#ef4444] mb-2">24/7</div>
                 <div className="text-sm text-muted-foreground">Support</div>
               </div>
             </div>
@@ -222,7 +223,7 @@ const FranchisePage = () => {
           <div className="container mx-auto px-6 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">
-                Our <span className="text-primary">Franchise Network</span>
+                Our <span className="text-[#ef4444]">Franchise Network</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore our successful locations across Nigeria
@@ -244,7 +245,7 @@ const FranchisePage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div>
                       <div className="text-white font-bold text-xl mb-1">{item.location}</div>
-                      <div className="inline-flex items-center gap-1 px-3 py-1 bg-primary/80 backdrop-blur-sm rounded-full text-sm text-white">
+                      <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#ef4444]/80 backdrop-blur-sm rounded-full text-sm text-white">
                         <Store className="w-3 h-3" />
                         {item.type}
                       </div>
@@ -261,7 +262,7 @@ const FranchisePage = () => {
           <div className="container mx-auto px-6 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">
-                Why Choose <span className="text-primary">Mealsworth</span>
+                Why Choose <span className="text-[#ef4444]">Mealsworth</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 We provide everything you need to succeed
@@ -272,7 +273,7 @@ const FranchisePage = () => {
               {benefits.map((benefit, index) => (
                 <div 
                   key={index}
-                  className="bg-background p-8 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-xl"
+                  className="bg-background p-8 rounded-2xl border border-border hover:border-[#ef4444]/30 transition-all hover:shadow-xl"
                 >
                   <div className={`${benefit.color} w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6`}>
                     {benefit.icon}
@@ -290,7 +291,7 @@ const FranchisePage = () => {
           <div className="container mx-auto px-6 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">
-                Success <span className="text-primary">Stories</span>
+                Success <span className="text-[#ef4444]">Stories</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Hear from our franchise owners
@@ -314,7 +315,7 @@ const FranchisePage = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="font-bold text-xl">{story.name}</h3>
-                        <p className="text-primary">{story.location}</p>
+                        <p className="text-[#ef4444]">{story.location}</p>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-green-600">{story.growth}</div>
@@ -338,7 +339,7 @@ const FranchisePage = () => {
           <div className="container mx-auto px-6 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">
-                Simple <span className="text-primary">6-Step Process</span>
+                Simple <span className="text-[#ef4444]">6-Step Process</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 From application to grand opening in 60 days
@@ -349,9 +350,9 @@ const FranchisePage = () => {
               {processSteps.map((step) => (
                 <div 
                   key={step.step}
-                  className="relative bg-background p-8 rounded-2xl border border-border hover:border-primary/30 transition-all"
+                  className="relative bg-background p-8 rounded-2xl border border-border hover:border-[#ef4444]/30 transition-all"
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-xl">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#ef4444] text-white rounded-full flex items-center justify-center font-bold text-xl">
                     {step.step}
                   </div>
                   <div className="text-4xl mb-4">{step.icon}</div>
@@ -366,7 +367,7 @@ const FranchisePage = () => {
         {/* CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-6 md:px-8">
-            <div className="bg-gradient-to-r from-primary to-[hsl(35,90%,55%)] rounded-2xl p-12 text-primary-foreground text-center">
+            <div className="bg-gradient-to-r from-[#ef4444] to-[#dc2626] rounded-2xl p-12 text-white text-center">
               <h2 className="text-4xl font-bold mb-4">
                 Ready to Start Your Journey?
               </h2>
@@ -374,7 +375,7 @@ const FranchisePage = () => {
                 Join the Mealsworth family and build your legacy with us
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg rounded-full font-bold">
+                <Button className="bg-white text-[#ef4444] hover:bg-white/90 px-8 py-6 text-lg rounded-full font-bold">
                   Apply for Franchise <ChevronRight className="ml-2" />
                 </Button>
                 <Button 
@@ -396,15 +397,15 @@ const FranchisePage = () => {
                 <h3 className="text-xl font-bold mb-4">Franchise Department</h3>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-primary" />
+                    <Phone className="w-5 h-5 text-[#ef4444]" />
                     <span>+234 702 582 5718</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-primary" />
+                    <Mail className="w-5 h-5 text-[#ef4444]" />
                     <span>Shunebauzoechinna@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-primary" />
+                    <MapPin className="w-5 h-5 text-[#ef4444]" />
                     <span>Enugu, Nigeria </span>
                   </div>
                 </div>
@@ -429,16 +430,16 @@ const FranchisePage = () => {
               <div>
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                 <div className="space-y-2">
-                  <Link to="/franchise#faq" className="block text-muted-foreground hover:text-primary transition-colors">
+                  <Link to="/franchise#faq" className="block text-muted-foreground hover:text-[#ef4444] transition-colors">
                     FAQ
                   </Link>
-                  <Link to="/franchise#requirements" className="block text-muted-foreground hover:text-primary transition-colors">
+                  <Link to="/franchise#requirements" className="block text-muted-foreground hover:text-[#ef4444] transition-colors">
                     Requirements
                   </Link>
-                  <Link to="/franchise#territory" className="block text-muted-foreground hover:text-primary transition-colors">
+                  <Link to="/franchise#territory" className="block text-muted-foreground hover:text-[#ef4444] transition-colors">
                     Available Territories
                   </Link>
-                  <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="block text-muted-foreground hover:text-[#ef4444] transition-colors">
                     Download Brochure
                   </a>
                 </div>

@@ -15,8 +15,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-4 sm:gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xs sm:text-sm">M</span>
+              <div 
+                className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: '#ef4444' }} // Red background
+              >
+                <span className="text-white font-bold text-xs sm:text-sm">M</span>
               </div>
               <span className="text-foreground font-semibold text-base sm:text-lg">Mealsworth</span>
             </Link>

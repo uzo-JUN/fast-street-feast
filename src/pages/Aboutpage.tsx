@@ -26,8 +26,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4 sm:gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xs sm:text-sm">M</span>
+              <div 
+                className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: '#ef4444' }} // Red color
+              >
+                <span className="text-white font-bold text-xs sm:text-sm">M</span>
               </div>
               <span className="text-foreground font-semibold text-base sm:text-lg">Mealsworth</span>
             </Link>
@@ -109,16 +112,37 @@ const AboutPage = () => {
       
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
+        <section 
+          className="relative overflow-hidden py-16 md:py-24"
+          style={{ 
+            background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 50%, transparent 100%)' 
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
           <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div className="text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Flame className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">THE JOURNEY</span>
+              <div 
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
+                style={{ 
+                  backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                  borderColor: 'rgba(239, 68, 68, 0.2)'
+                }}
+              >
+                <Flame className="w-4 h-4" style={{ color: '#ef4444' }} />
+                <span className="text-sm font-medium" style={{ color: '#ef4444' }}>
+                  THE JOURNEY
+                </span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-                <span className="text-gradient bg-gradient-to-r from-primary to-[hsl(35,90%,55%)]">
+                <span 
+                  className="text-gradient"
+                  style={{
+                    background: 'linear-gradient(to right, #ef4444, #dc2626)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
                   Welcome
                 </span>
               </h1>
@@ -149,8 +173,9 @@ const AboutPage = () => {
                       const parent = target.parentElement;
                       if (parent) {
                         const fallback = document.createElement('div');
-                        fallback.className = 'w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5';
-                        fallback.innerHTML = `<span class="text-4xl opacity-50">📷</span>`;
+                        fallback.className = 'w-full h-full flex items-center justify-center';
+                        fallback.style.background = 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%)';
+                        fallback.innerHTML = '<span class="text-4xl opacity-50">📷</span>';
                         parent.appendChild(fallback);
                       }
                     }}
@@ -166,7 +191,10 @@ const AboutPage = () => {
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-4xl mb-2">{stat.emoji}</div>
-                    <div className="text-3xl font-bold text-primary mb-1">
+                    <div 
+                      className="text-3xl font-bold mb-1"
+                      style={{ color: '#ef4444' }}
+                    >
                       {stat.number}
                     </div>
                     <div className="text-sm text-muted-foreground">
@@ -203,7 +231,8 @@ const AboutPage = () => {
                         const parent = target.parentElement;
                         if (parent) {
                           const fallback = document.createElement('div');
-                          fallback.className = 'w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5';
+                          fallback.className = 'w-full h-full flex items-center justify-center';
+                          fallback.style.background = 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%)';
                           fallback.innerHTML = `
                             <div class="text-4xl">
                               ${value.title === "Quality" ? "✨" : 
@@ -238,7 +267,13 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 {team.map((member, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-primary/10 border-4 border-primary/20">
+                    <div 
+                      className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%)',
+                        borderColor: 'rgba(239, 68, 68, 0.2)'
+                      }}
+                    >
                       {member.image ? (
                         <img 
                           src={member.image} 
@@ -265,7 +300,10 @@ const AboutPage = () => {
                     <h3 className="font-bold text-xl mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-primary font-medium mb-1">
+                    <p 
+                      className="font-medium mb-1"
+                      style={{ color: '#ef4444' }}
+                    >
                       {member.role}
                     </p>
                   </div>
@@ -274,7 +312,13 @@ const AboutPage = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gradient-to-r from-primary to-[hsl(35,90%,55%)] rounded-2xl p-8 text-primary-foreground mb-12">
+            <div 
+              className="rounded-2xl p-8 mb-12"
+              style={{
+                background: 'linear-gradient(to right, #ef4444, #dc2626)',
+                color: 'white'
+              }}
+            >
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -289,7 +333,13 @@ const AboutPage = () => {
                   </p>
                 </div>
                 <Link to="/menu">
-                  <Button className="mt-4 md:mt-0 bg-primary-foreground text-primary font-bold rounded-lg hover:opacity-90 transition-opacity px-8 py-3">
+                  <Button 
+                    className="mt-4 md:mt-0 font-bold rounded-lg hover:opacity-90 transition-opacity px-8 py-3"
+                    style={{
+                      backgroundColor: 'white',
+                      color: '#ef4444'
+                    }}
+                  >
                     Order Now
                   </Button>
                 </Link>
@@ -303,13 +353,16 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center gap-2 mb-4 md:mb-0">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">M</span>
+                <div 
+                  className="w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: '#ef4444' }}
+                >
+                  <span className="text-white font-bold text-sm">M</span>
                 </div>
                 <span className="text-foreground font-semibold">Mealsworth</span>
               </div>
               <div className="text-sm text-muted-foreground">
-                © 2025 Mealsworth
+                © 2014 Mealsworth
               </div>
             </div>
           </div>

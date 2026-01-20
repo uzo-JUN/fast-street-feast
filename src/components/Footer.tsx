@@ -25,22 +25,67 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">M</span>
+              <div 
+                className="w-8 h-8 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: '#ef4444' }} // Red color
+              >
+                <span className="text-white font-bold text-sm">M</span>
               </div>
               <span className="text-foreground font-semibold text-lg">Mealsworth</span>
             </div>
             <p className="text-muted-foreground text-sm mb-4">
-              Bringing authentic street food flavors to your neighborhood since 2025.
+              Bringing authentic street food flavors to your neighborhood since 2014.
             </p>
             <div className="flex gap-3">
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://instagram.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center transition-colors"
+                style={{ 
+                  '--hover-color': '#ef4444',
+                } as React.CSSProperties}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#ef4444';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                }}
+              >
                 <Instagram className="h-4 w-4 text-foreground" />
               </a>
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://x.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center transition-colors"
+                style={{ 
+                  '--hover-color': '#ef4444',
+                } as React.CSSProperties}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#ef4444';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                }}
+              >
                 <X className="h-4 w-4 text-foreground" />
               </a>
-              <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://dribbble.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center transition-colors"
+                style={{ 
+                  '--hover-color': '#ef4444',
+                } as React.CSSProperties}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#ef4444';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                }}
+              >
                 <Dribbble className="h-4 w-4 text-foreground" />
               </a>
             </div>
@@ -54,7 +99,16 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors block"
+                    className="text-muted-foreground text-sm transition-colors block"
+                    style={{
+                      '--hover-color': '#ef4444',
+                    } as React.CSSProperties}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#ef4444';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '';
+                    }}
                   >
                     {link.name}
                   </Link>
@@ -71,7 +125,16 @@ const Footer = () => {
                 <li key={category.id}>
                   <Link 
                     to={`/menu#${category.id}`}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors block"
+                    className="text-muted-foreground text-sm transition-colors block"
+                    style={{
+                      '--hover-color': '#ef4444',
+                    } as React.CSSProperties}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#ef4444';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '';
+                    }}
                     onClick={(e) => {
                       e.preventDefault();
                       // Navigate to menu page first, then scroll to category
@@ -103,15 +166,15 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4" style={{ color: '#ef4444' }} />
                 +234 702 582 5718
               </li>
               <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Mail className="h-4 w-4 text-primary" />
+                <Mail className="h-4 w-4" style={{ color: '#ef4444' }} />
                 Shunebauzoechinna@gmail.com
               </li>
               <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4 text-primary" />
+                <MapPin className="h-4 w-4" style={{ color: '#ef4444' }} />
                 Enugu, Nigeria
               </li>
             </ul>
@@ -120,7 +183,7 @@ const Footer = () => {
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Mealsworth. All rights reserved.
+            © 2014 Mealsworth. All rights reserved.
           </p>
         </div>
       </div>

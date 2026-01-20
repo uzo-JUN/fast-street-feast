@@ -29,13 +29,14 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-4 sm:gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xs sm:text-sm">M</span>
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#ef4444] rounded-full flex items-center justify-center">
+                {/* Changed "M" to white */}
+                <span className="text-white font-bold text-xs sm:text-sm">M</span>
               </div>
               <span className="text-foreground font-semibold text-base sm:text-lg">Mealsworth</span>
             </Link>
 
-            {/* Nav Links with active highlighting - NOW VISIBLE ON MOBILE! */}
+            {/* Nav Links with active highlighting - NOW VISIBLE ON MOBILE TOO! */}
             <div className="flex items-center gap-3 sm:gap-6">
               {navItems.map((item) => (
                 <Link
@@ -371,7 +372,7 @@ const MenuPage = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-16 h-16 border-4 border-[#ef4444] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-foreground">Loading menu...</p>
         </div>
       </div>
@@ -386,16 +387,17 @@ const MenuPage = () => {
       {/* Add padding-top to account for fixed navbar */}
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
+        <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-[#ef4444]/10 via-[#ef4444]/5 to-transparent">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
           <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div className="text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Flame className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Street Food Excellence</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ef4444]/10 border border-[#ef4444]/20">
+                <Flame className="w-4 h-4 text-[#ef4444]" />
+                <span className="text-sm font-medium text-[#ef4444]">Street Food Excellence</span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-                <span className="text-gradient bg-gradient-to-r from-primary to-[hsl(35,90%,55%)]">
+                {/* FIXED: Direct red gradient */}
+                <span className="bg-gradient-to-r from-[#ef4444] to-[#dc2626] bg-clip-text text-transparent">
                   Full Menu
                 </span>
               </h1>
@@ -404,17 +406,17 @@ const MenuPage = () => {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{menuItems.length}+</div>
+                  <div className="text-2xl font-bold text-[#ef4444]">{menuItems.length}+</div>
                   <div className="text-sm text-muted-foreground">Items</div>
                 </div>
                 <div className="h-8 w-px bg-border"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">6</div>
+                  <div className="text-2xl font-bold text-[#ef4444]">6</div>
                   <div className="text-sm text-muted-foreground">Categories</div>
                 </div>
                 <div className="h-8 w-px bg-border"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">24/7</div>
+                  <div className="text-2xl font-bold text-[#ef4444]">24/7</div>
                   <div className="text-sm text-muted-foreground">Available</div>
                 </div>
               </div>
@@ -432,14 +434,14 @@ const MenuPage = () => {
                   placeholder="Search for dishes..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-3 bg-card border border-input rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-foreground placeholder:text-muted-foreground"
+                  className="w-full px-6 py-3 bg-card border border-input rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ef4444] focus:border-transparent text-foreground placeholder:text-muted-foreground"
                 />
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground">
                   🔍
                 </div>
               </div>
               <div className="flex gap-2">
-                <button className="px-6 py-3 bg-card border border-input rounded-xl hover:border-primary/50 transition-colors flex items-center gap-2 text-foreground">
+                <button className="px-6 py-3 bg-card border border-input rounded-xl hover:border-[#ef4444]/50 transition-colors flex items-center gap-2 text-foreground">
                   <Filter className="w-4 h-4" />
                   Filter
                 </button>
@@ -460,7 +462,7 @@ const MenuPage = () => {
                     onClick={() => setActiveCategory(category.id)}
                     className={`px-5 py-3 rounded-xl font-medium whitespace-nowrap flex items-center gap-2 transition-all ${
                       activeCategory === category.id
-                        ? "bg-primary text-primary-foreground"
+                        ? "bg-[#ef4444] text-white"
                         : "bg-card text-muted-foreground hover:text-foreground hover:bg-card/80 border border-input"
                     }`}
                   >
@@ -468,7 +470,7 @@ const MenuPage = () => {
                     <span>{category.name}</span>
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       activeCategory === category.id
-                        ? "bg-primary-foreground/20"
+                        ? "bg-white/20"
                         : "bg-input"
                     }`}>
                       {categoryCounts[category.id] || 0}
@@ -491,7 +493,7 @@ const MenuPage = () => {
                   {filteredItems.map((item) => (
                     <div 
                       key={item.id}
-                      className="group bg-card border border-input rounded-2xl overflow-hidden hover:shadow-card transition-all hover:border-primary/30"
+                      className="group bg-card border border-input rounded-2xl overflow-hidden hover:shadow-card transition-all hover:border-[#ef4444]/30"
                     >
                       {/* Image Container - Shows actual images from public folder */}
                       <div className="relative h-48 overflow-hidden">
@@ -508,7 +510,7 @@ const MenuPage = () => {
                               const parent = target.parentElement;
                               if (parent) {
                                 const fallback = document.createElement('div');
-                                fallback.className = 'w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5';
+                                fallback.className = 'w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#ef4444]/10 to-[#ef4444]/5';
                                 fallback.innerHTML = `
                                   <span class="text-4xl mb-2">${
                                     item.category === "sharwama" ? "🥙" : 
@@ -524,7 +526,7 @@ const MenuPage = () => {
                             }}
                           />
                         ) : (
-                          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#ef4444]/10 to-[#ef4444]/5">
                             <span className="text-4xl mb-2">
                               {item.category === "sharwama" ? "🥙" : 
                                item.category === "pies" ? "🥧" :
@@ -548,7 +550,7 @@ const MenuPage = () => {
                       <div className="p-5">
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="text-lg font-bold text-foreground">{item.name}</h3>
-                          <div className="text-xl font-bold text-primary">
+                          <div className="text-xl font-bold text-[#ef4444]">
                             ₦{item.price.toLocaleString()}
                           </div>
                         </div>
@@ -561,7 +563,7 @@ const MenuPage = () => {
                         <div className="flex items-center justify-between pt-4 border-t border-border">
                           <button
                             onClick={() => addToCart(item)}
-                            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center gap-2"
+                            className="px-4 py-2 bg-[#ef4444] text-white rounded-lg font-medium hover:bg-[#ef4444]/90 transition-colors flex items-center gap-2"
                           >
                             <ShoppingCart className="w-4 h-4" />
                             Add to Cart
@@ -574,8 +576,8 @@ const MenuPage = () => {
               )}
             </div>
 
-            {/* Special Offer Banner */}
-            <div className="bg-gradient-to-r from-primary to-[hsl(35,90%,55%)] rounded-2xl p-8 text-primary-foreground mb-12">
+            {/* Special Offer Banner - FIXED with direct red */}
+            <div className="bg-gradient-to-r from-[#ef4444] to-[#dc2626] rounded-2xl p-8 text-white mb-12">
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -589,7 +591,7 @@ const MenuPage = () => {
                     4 Sharwarmas + 4 Pies + 2 Popcorns + 4 Drinks for only ₦40,500
                   </p>
                 </div>
-                <button className="mt-4 md:mt-0 px-6 py-3 bg-primary-foreground text-primary font-bold rounded-lg hover:opacity-90 transition-opacity">
+                <button className="mt-4 md:mt-0 px-6 py-3 bg-white text-[#ef4444] font-bold rounded-lg hover:opacity-90 transition-opacity">
                   Grab This Deal
                 </button>
               </div>
