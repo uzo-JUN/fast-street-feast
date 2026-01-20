@@ -6,21 +6,21 @@ import shawarmaPlateImage from "@/assets/shawarma-plate.jpg";
 const menuItems = [
   {
     image: shawarmaPlateImage,
-    title: "Classic Shawarma Plate",
-    description: "Tender grilled meat with fresh vegetables, hummus, and warm pita bread",
+    title: "Classic Shawarma ",
+    description: "Tender grilled meat with fresh vegetables and warm  bread",
     price: "₦3,500",
   },
   {
     image: meatpieImage,
-    title: "Golden Meatpie",
+    title: "Meatpie Deluxe",
     description: "Flaky, buttery crust filled with seasoned minced meat and vegetables",
-    price: "₦800",
+    price: "₦2,500",
   },
   {
     image: popcornImage,
-    title: "Buttery Popcorn",
-    description: "Fresh, warm popcorn made with premium butter and a hint of sea salt",
-    price: "₦500",
+    title: "Caramel Popcorn",
+    description: "Fresh and warm popcorn made with premium butter",
+    price: "₦1000",
   },
 ];
 
@@ -35,7 +35,7 @@ const MenuSection = () => {
             <span className="text-foreground"> Picks</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Handcrafted with love and the freshest ingredients, these are the crowd favorites 
+            These are the Buyers Favorites 
             that keep our customers coming back for more.
           </p>
         </div>

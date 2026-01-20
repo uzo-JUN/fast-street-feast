@@ -1,6 +1,23 @@
 import { Instagram, Twitter, Facebook, Phone, Mail, MapPin, Dribbble, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const categories = [
+    { name: "Shawarma", id: "sharwama" },
+    { name: "Meatpie", id: "pies" },
+    { name: "Popcorn", id: "popcorn" },
+    { name: "Drinks", id: "drinks" },
+    { name: "Fruits", id: "fruits" },
+    { name: "Combos", id: "combos" }
+  ];
+
+  // Quick links for navigation
+  const quickLinks = [
+    { name: "Menu", path: "/menu" },
+    { name: "About Us", path: "/about" },
+    { name: "Franchise", path: "#" },
+  ];
+
   return (
     <footer className="bg-card border-t border-border py-12">
       <div className="container mx-auto px-6">
@@ -17,13 +34,13 @@ const Footer = () => {
               Bringing authentic street food flavors to your neighborhood since 2025.
             </p>
             <div className="flex gap-3">
-              <a href="https://instagram.com/" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram className="h-4 w-4 text-foreground" />
               </a>
-              <a href="https://x.com/" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
                 <X className="h-4 w-4 text-foreground" />
               </a>
-              <a href="https://dribbble.com/" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors">
                 <Dribbble className="h-4 w-4 text-foreground" />
               </a>
             </div>
@@ -33,25 +50,49 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "Menu", "Locations", "About Us"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                    {link}
-                  </a>
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path}
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors block"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Menu */}
+          {/* Menu - Now links to specific categories */}
           <div>
             <h4 className="text-foreground font-semibold mb-4">Menu</h4>
             <ul className="space-y-2">
-              {["Shawarma", "Meatpie", "Popcorn", "Drinks","Fruits", "Combos",].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                    {item}
-                  </a>
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link 
+                    to={`/menu#${category.id}`}
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors block"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // Navigate to menu page first, then scroll to category
+                      const navigateToCategory = () => {
+                        const element = document.getElementById(category.id);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      };
+                      
+                      // If we're already on menu page, just scroll
+                      if (window.location.pathname === '/menu') {
+                        navigateToCategory();
+                      } else {
+                        // Navigate to menu, then scroll after page loads
+                        window.location.href = `/menu#${category.id}`;
+                      }
+                    }}
+                  >
+                    {category.name}
+                  </Link>
                 </li>
               ))}
             </ul>

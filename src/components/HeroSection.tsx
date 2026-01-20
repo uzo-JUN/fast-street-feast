@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-shawarma.jpg";
+import { Navigate } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -22,11 +23,6 @@ const HeroSection = () => {
             Experience authentic shawarma, crispy meatpies, and irresistible snacks 
             from our mobile food carts, trucks, and straight to your doorstep.
           </p>
-
-          <Button variant="hero" size="lg" className="group">
-            See Our Menu
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
         </div>
 
         {/* Hero Image */}

@@ -1,13 +1,13 @@
-import { Search, Bookmark, ShoppingCart, Utensils } from "lucide-react"; // Added Utensils icon
+// Navbar.tsx
+import { Search, Bookmark, ShoppingCart, Utensils, Info } from "lucide-react"; // Added Info icon for About
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom"; // IMPORTANT: Use Link instead of <a>
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navItems = [
-    { name: "Menu", path: "/menu", icon: <Utensils className="h-4 w-4" /> },
-    { name: "Popular", path: "#popular" },
-    { name: "Shawarma", path: "#shawarma" },
-    { name: "Snacks & Sides", path: "#snacks-sides" }
+    { name: "Menu", path: "/menu", },
+    { name: "About", path: "/about", },
+    { name: "Franchise", path: "/franchise" },
   ];
 
   return (
@@ -23,7 +23,7 @@ const Navbar = () => {
               <span className="text-foreground font-semibold text-lg">Mealsworth</span>
             </Link>
 
-            {/* Nav Links - Now with Menu */}
+            {/* Nav Links - Now with About */}
             <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 item.path.startsWith('#') ? (
@@ -33,17 +33,15 @@ const Navbar = () => {
                     href={item.path}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm flex items-center gap-1"
                   >
-                    {item.icon}
                     {item.name}
                   </a>
                 ) : (
-                  // For page routes (like /menu)
+                  // For page routes (like /menu, /about)
                   <Link
                     key={item.name}
                     to={item.path}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm flex items-center gap-1"
                   >
-                    {item.icon}
                     {item.name}
                   </Link>
                 )
