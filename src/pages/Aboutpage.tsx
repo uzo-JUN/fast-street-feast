@@ -1,9 +1,9 @@
-// AboutPage.tsx
+// AboutPage.tsx - Keep Navbar but remove Search & Bookmark icons
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Award, Shield, Truck, Heart, Clock, Users, Star, Flame, TrendingUp, Utensils, Search, Bookmark } from "lucide-react";
+import { Sparkles, Award, Shield, Truck, Heart, Clock, Users, Star, Flame, TrendingUp, Utensils } from "lucide-react";
 
-// Navbar Component
+// Navbar Component - WITHOUT Search & Bookmark icons
 const Navbar = () => {
   const location = useLocation();
   
@@ -63,13 +63,9 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* RIGHT SIDE - REMOVED Search & Bookmark icons, keeping structure */}
           <div className="flex items-center gap-2">
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Search className="h-4 w-4" />
-            </Button>
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Bookmark className="h-4 w-4" />
-            </Button>
+            {/* Empty - Icons removed as requested */}
           </div>
         </div>
       </div>
@@ -122,7 +118,7 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      <Navbar />
+      <Navbar /> {/* Keep this Navbar */}
       
       <div className="pt-20">
         {/* Hero Section */}

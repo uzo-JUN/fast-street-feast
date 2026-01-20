@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Clock, ShoppingCart, Filter, Star, Flame, Sparkles, TrendingUp, Search, Bookmark, Utensils, Info } from "lucide-react";
+import { Clock, ShoppingCart, Filter, Star, Flame, Sparkles, TrendingUp, Utensils, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,6 @@ const Navbar = () => {
     { name: "Menu", path: "/menu" },
     { name: "About", path: "/about" },
     { name: "Franchise", path: "/franchise" },
-
   ];
 
   // Check if current path matches nav item
@@ -70,15 +69,9 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Side Icons */}
+          {/* Right Side - REMOVED Search & Bookmark icons */}
           <div className="flex items-center gap-2">
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Search className="h-4 w-4" />
-            </Button>
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Bookmark className="h-4 w-4" />
-            </Button>
-            {/* Cart button removed as requested */}
+            {/* Empty - Icons removed as requested */}
           </div>
         </div>
       </div>

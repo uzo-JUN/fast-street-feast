@@ -1,4 +1,4 @@
-// FranchisePage.tsx
+// FranchisePage.tsx - WITHOUT Search & Bookmark icons
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
@@ -14,9 +14,7 @@ import {
   MapPin,
   Phone,
   Mail,
-  ChevronRight,
-  Search,
-  Bookmark
+  ChevronRight
 } from "lucide-react";
 
 // Navbar Component - Consistent with other pages
@@ -65,13 +63,9 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Right Side - REMOVED Search & Bookmark icons */}
           <div className="flex items-center gap-2">
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Search className="h-4 w-4" />
-            </Button>
-            <Button variant="navIcon" size="icon" className="rounded-full">
-              <Bookmark className="h-4 w-4" />
-            </Button>
+            {/* Empty - Icons removed as requested */}
           </div>
         </div>
       </div>
@@ -82,14 +76,14 @@ const Navbar = () => {
 const FranchisePage = () => {
   // Gallery Images - Add your franchise location images here
   const galleryImages = [
-    { id: 1, image: "/assets/foodle.png", location: "Lagos Mainland", type: "Flagship" },
-    { id: 2, image: "/assets/foodold.jpeg", location: "Abuja Central", type: "Premium" },
-    { id: 3, image: "/assets/ll.jpeg", location: "Port Harcourt", type: "Express" },
-    { id: 4, image: "/assets/foooo.jpg", location: "Ibadan", type: "Standard" },
-    { id: 5, image: "/assets/arabic sharwarma.jpeg", location: "Enugu", type: "Classic" },
-    { id: 6, image: "/assets/meatpie.jpeg", location: "Kano", type: "Heritage" },
-    { id: 7, image: "/assets/sharwama.jpeg", location: "Calabar", type: "Coastal" },
-    { id: 8, image: "/assets/popcorn.jpeg", location: "Benin", type: "Traditional" },
+    { id: 1, image: "/assets/stores.jpg", location: "Lagos Mainland", type: "Flagship" },
+    { id: 2, image: "/assets/snack store.jpg", location: "Abuja Central", type: "Premium" },
+    { id: 3, image: "/assets/snstor.jpg", location: "Port Harcourt", type: "Express" },
+    { id: 4, image: "/assets/snackkk.jpg", location: "Ibadan", type: "Standard" },
+    { id: 5, image: "/assets/snaso.jpg", location: "Enugu", type: "Classic" },
+    { id: 6, image: "/assets/sstor.avif", location: "Kano", type: "Heritage" },
+    { id: 7, image: "/assets/store.webp", location: "Calabar", type: "Coastal" },
+    { id: 8, image: "/assets/enust.jpg", location: "Benin", type: "Traditional" },
   ];
 
   // Benefits of Franchising
@@ -109,7 +103,7 @@ const FranchisePage = () => {
     {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Low Investment",
-      description: "Start from ₦5M with flexible financing",
+      description: "Start from ₦1M with flexible financing",
       color: "bg-gradient-to-br from-amber-500 to-orange-600"
     },
     {
@@ -127,7 +121,7 @@ const FranchisePage = () => {
       location: "Lagos",
       duration: "2 years",
       growth: "300%",
-      image: "/assets/arabic sharwarma.jpeg",
+      image: "/assets/chidiii.jpg",
       quote: "Best decision of my life. The support system is incredible."
     },
     {
@@ -135,7 +129,7 @@ const FranchisePage = () => {
       location: "Kano",
       duration: "1 year",
       growth: "250%",
-      image: "/assets/meatpie.jpeg",
+      image: "/assets/amina.jpg",
       quote: "From zero to hero. The training program transformed me."
     },
     {
@@ -143,7 +137,7 @@ const FranchisePage = () => {
       location: "Enugu",
       duration: "3 years",
       growth: "400%",
-      image: "/assets/sharwama.jpeg",
+      image: "/assets/yufu.jpg",
       quote: "Life-changing opportunity. The brand recognition is amazing."
     }
   ];
@@ -214,7 +208,7 @@ const FranchisePage = () => {
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">₦5M</div>
+                <div className="text-4xl font-bold text-primary mb-2">₦1M</div>
                 <div className="text-sm text-muted-foreground">Starting Investment</div>
               </div>
               <div className="text-center">
@@ -405,15 +399,15 @@ const FranchisePage = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>+234 802 123 4567</span>
+                    <span>+234 702 582 5718</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-primary" />
-                    <span>franchise@mealsworth.com</span>
+                    <span>Shunebauzoechinna@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <span>Franchise HQ, Lagos</span>
+                    <span>Enugu, Nigeria </span>
                   </div>
                 </div>
               </div>
@@ -422,15 +416,15 @@ const FranchisePage = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Express Kiosk</span>
-                    <span className="font-bold">₦5M - ₦8M</span>
+                    <span className="font-bold">₦1 - ₦3M</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Standard Outlet</span>
-                    <span className="font-bold">₦8M - ₦15M</span>
+                    <span className="font-bold">₦4M - ₦7M</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Premium Store</span>
-                    <span className="font-bold">₦15M - ₦25M</span>
+                    <span className="font-bold">₦8M - ₦10M</span>
                   </div>
                 </div>
               </div>
